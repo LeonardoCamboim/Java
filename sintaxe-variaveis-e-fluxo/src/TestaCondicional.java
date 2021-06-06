@@ -18,5 +18,8 @@ public class TestaCondicional {
 				System.out.println("Voce é menor de idade, não pode entrar");
 			}
 		}
+		TestaClass conta01 = new TestaClass();
+		conta01.saldo += 100;
+		System.out.println(conta01.saldo);
 	}
 }
