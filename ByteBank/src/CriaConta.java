@@ -2,31 +2,35 @@
 public class CriaConta {
 	
 	public static void main(String[] args) {
-		Conta primeiraConta = new Conta();
-		Conta segundaConta = new Conta();
+		Cliente primeiroCliente = new Cliente();
+		Conta primeiraConta = new Conta(1234, 25254, primeiroCliente);
+		Conta segundaConta = new Conta(2524, 16454, primeiroCliente);
 		segundaConta.deposita(500);
 		segundaConta.saca(1000);
 		
-		System.out.println(segundaConta.saldo());
+		primeiroCliente.setNome("Leonardo");
+		
+		System.out.println(primeiraConta.getTitular().getNome());
+		
+		System.out.println(Conta.getTotal());
+		
+		
+		
+		
+		
+		
 		/*
-		/boolean conseguiuRetirar = segundaConta.saca(50);
-		System.out.println(conseguiuRetirar);
-		
-		boolean transferencia = segundaConta.transfere(50, primeiraConta);
-		System.out.println(segundaConta.saldo);
-		System.out.println(primeiraConta.saldo);
-		
+		System.out.println(primeiroCliente.getNome());
 	
-		if(transferencia) {
-			System.out.println("testando boolean");
-		}
-		Cliente leonardo = new Cliente();
-		leonardo.cpf = "000.000.000-00";
-		leonardo.nome = "Leonardo de Almeida Camboim";
-		leonardo.profissao = "Contador";
+		primeiroCliente.setNome("Leonardo");
+		System.out.println(primeiroCliente.getNome());
 		
-		System.out.println(leonardo.cpf);
-		primeiraConta.titular = leonardo;
-		System.out.println(primeiraConta.titular.nome);*/
+		System.out.println(primeiraConta.getSaldo());
+		System.out.println(segundaConta.getSaldo());
+		
+		segundaConta.transfere(200, primeiraConta);
+		
+		System.out.println(primeiraConta.getSaldo());
+		System.out.println(segundaConta.getSaldo()); */
 	}
 }
