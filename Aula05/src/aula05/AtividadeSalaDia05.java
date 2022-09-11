@@ -36,7 +36,7 @@ public class AtividadeSalaDia05 {
 		int num = scanner.nextInt();
 			
 		for (int i = 0; num >= i; num--) {
-				System.out.println(num);
+			System.out.println(num);
 		}
 	}
 	
