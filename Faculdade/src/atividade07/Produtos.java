@@ -1,4 +1,4 @@
-package Atividade07;
+package atividade07;
 
 public class Produtos {
 	
