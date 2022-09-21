@@ -14,15 +14,15 @@ public class AtividadeSalaDia05Run {
 		
 		// Questão 02
 		
-		atividade.questaoDois();
+		//atividade.questaoDois();
 		
 		// Questão 03
 		
-		atividade.questaoTres();
+		//atividade.questaoTres();
 		
 		// Questão 04
 		
-		atividade.questaoQuatro();
+		//atividade.questaoQuatro();
 	}
 
 }

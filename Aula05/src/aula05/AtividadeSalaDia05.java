@@ -4,7 +4,6 @@ package aula05;
 import java.util.Scanner;
 
 public class AtividadeSalaDia05 {
-	
 
 	private int sum;
 	private int count;
