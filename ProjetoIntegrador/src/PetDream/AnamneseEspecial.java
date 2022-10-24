@@ -26,33 +26,31 @@ public class AnamneseEspecial extends Anamnese{
 		Scanner scanner = new Scanner(System.in);
 		
 		System.out.println("Sistema Respiratorio: ");
-		this.sistemaRespiratorio = scanner.toString();
+		this.sistemaRespiratorio = scanner.next();
 		
 		System.out.println("Sistema Cardiovascular: ");
-		this.sistemaCardiovascular = scanner.toString();
+		this.sistemaCardiovascular = scanner.next();
 		
 		System.out.println("Sistema Digestorio: ");
-		this.sistemaDigestorio = scanner.toString();
+		this.sistemaDigestorio = scanner.next();
 		
 		System.out.println("Sistema Urinario: ");
-		this.sistemaUrinario = scanner.toString();
+		this.sistemaUrinario = scanner.next();
 		
 		System.out.println("Sistema Reprodutor: ");
-		this.sistemaReprodutor = scanner.toString();
+		this.sistemaReprodutor = scanner.next();
 		
 		System.out.println("Sistema Locomotor: ");
-		this.sistemaLocomotor = scanner.toString();
+		this.sistemaLocomotor = scanner.next();
 		
 		System.out.println("Sistema Neurologico: ");
-		this.sistemaNeurologico = scanner.toString();
+		this.sistemaNeurologico = scanner.next();
 		
 		System.out.println("Pelos e Anexos: ");
-		this.pelosEAnexos = scanner.toString();
+		this.pelosEAnexos = scanner.next();
 		
 		System.out.println("Olhos: ");
-		this.olhos = scanner.toString();
-	
-		scanner.close();
+		this.olhos = scanner.next();
 		
 	}
 	

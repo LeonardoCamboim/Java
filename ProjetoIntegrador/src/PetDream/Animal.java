@@ -48,7 +48,6 @@ public class Animal {
 		System.out.println("Procedencia: ");
 		this.procedencia = scanner.next();
 		
-		scanner.close();
 	}
 	
 	public String getNome() {

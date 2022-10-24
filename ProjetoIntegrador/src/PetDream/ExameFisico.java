@@ -36,57 +36,56 @@ public class ExameFisico {
 		Scanner scanner = new Scanner(System.in);
 		
 		System.out.println("Postura: ");
-		this.postura = scanner.toString();
+		this.postura = scanner.next();
 		
 		System.out.println("Nivel De Consciencia: ");
-		this.nivelDeConsciencia = scanner.toString();
+		this.nivelDeConsciencia = scanner.next();
 		
 		System.out.println("Escore Corporal: ");
-		this.escoreCorporal = scanner.toString();
+		this.escoreCorporal = scanner.next();
 		
 		System.out.println("Tr: ");
 		this.tr = scanner.nextInt();
 		
 		System.out.println("Fr: ");
-		this.fr = scanner.toString();
+		this.fr = scanner.next();
 		
 		System.out.println("Fc: ");
-		this.fc = scanner.toString();
+		this.fc = scanner.next();
 		
 		System.out.println("Tpc: ");
-		this.tpc = scanner.toString();
+		this.tpc = scanner.next();
 		
 		System.out.println("Pulso: ");
-		this.pulso = scanner.toString();
+		this.pulso = scanner.next();
 		
 		System.out.println("Hidratacao: ");
-		this.hidratacao = scanner.toString();
+		this.hidratacao = scanner.next();
 		
 		System.out.println("Linfonodos Submand: ");
-		this.linfonodosSubmand = scanner.toString();
+		this.linfonodosSubmand = scanner.next();
 		
 		System.out.println("linf Pre Escapulares: ");
-		this.linfPreEscapulares = scanner.toString();
+		this.linfPreEscapulares = scanner.next();
 		
 		System.out.println("linf Popliteos: ");
-		this.linfPopliteos = scanner.toString();
+		this.linfPopliteos = scanner.next();
 		
 		System.out.println("linf Inguinais: ");
-		this.linfInguinais = scanner.toString();
+		this.linfInguinais = scanner.next();
 		
 		System.out.println("Mucosa Ocular: ");
-		this.mucosaOcular = scanner.toString();
+		this.mucosaOcular = scanner.next();
 		
 		System.out.println("Mucosa Oral: ");
-		this.mucosaOral = scanner.toString();
+		this.mucosaOral = scanner.next();
 		
 		System.out.println("Mucosa Peniana: ");
-		this.mucosaPeniana = scanner.toString();
+		this.mucosaPeniana = scanner.next();
 		
 		System.out.println("Mucosa Anal: ");
-		this.mucosaAnal = scanner.toString();
+		this.mucosaAnal = scanner.next();
 		
-		scanner.close();
 	}
 	
 	public String getPostura() {

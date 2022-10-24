@@ -43,7 +43,6 @@ public class AnamneseGeral extends Anamnese {
 		System.out.println("Vermifugação: ");
 		this.vermifugacao = scanner.next();
 	
-		scanner.close();
 		
 	}
 	

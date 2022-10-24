@@ -17,7 +17,7 @@ public class Responsavel extends Pessoa {
 		return animal;
 	}
 
-	public void setAnimal(Animal animal) {
+	public void addAnimal(Animal animal) {
 		this.animal.add(animal);
 	}
 	
