@@ -1,5 +1,7 @@
 package formas;
+
 import java.util.Scanner;
+
 public class Quadrado {
 
 	Scanner entrada = new Scanner(System.in);
