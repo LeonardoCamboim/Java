@@ -25,16 +25,16 @@ public class Animal {
 		Scanner scanner = new Scanner(System.in);
 		
 		System.out.println("Nome: ");
-		this.nome = scanner.toString();
+		this.nome = scanner.next();
 		
 		System.out.println("Especie: ");
-		this.especie = scanner.toString();
+		this.especie = scanner.next();
 		
 		System.out.println("Raca: ");
-		this.raca = scanner.toString();
+		this.raca = scanner.next();
 		
 		System.out.println("Sexo: ");
-		this.sexo = scanner.toString();
+		this.sexo = scanner.next();
 		
 		System.out.println("Idade: ");
 		this.idade = scanner.nextInt();
@@ -43,10 +43,10 @@ public class Animal {
 		this.peso = scanner.nextDouble();
 		
 		System.out.println("Pelagem: ");
-		this.pelagem = scanner.toString();
+		this.pelagem = scanner.next();
 		
 		System.out.println("Procedencia: ");
-		this.procedencia = scanner.toString();
+		this.procedencia = scanner.next();
 		
 		scanner.close();
 	}
@@ -122,5 +122,12 @@ public class Animal {
 	public void setResponsavel(Responsavel responsavel) {
 		this.responsavel = responsavel;
 	}
+
+	@Override
+	public String toString() {
+		return "Animal [nome=" + nome + ", especie=" + especie + ", responsavel=" + responsavel + "]";
+	}
+
+	
 	
 }

@@ -7,11 +7,11 @@ public class Pessoa {
 	private String endereço;
 	private String cidade;
 	private String estado;
-	private int telefoneFixo;
-	private int celular;
+	private String telefoneFixo;
+	private String celular;
 	
 
-	public Pessoa(String nome, String cpf, String endereço, String cidade, String estado, int telefoneFixo, int celular) {
+	public Pessoa(String nome, String cpf, String endereço, String cidade, String estado, String telefoneFixo, String celular) {
 		// TODO Auto-generated constructor stub
 		this.nome = nome;
 		this.cpf = cpf;
@@ -55,24 +55,29 @@ public class Pessoa {
 		this.estado = estado;
 	}
 
-	public int getTelefoneFixo() {
+	public String getTelefoneFixo() {
 		return telefoneFixo;
 	}
 
-	public void setTelefoneFixo(int telefoneFixo) {
+	public void setTelefoneFixo(String telefoneFixo) {
 		this.telefoneFixo = telefoneFixo;
 	}
 
-	public int getCelular() {
+	public String getCelular() {
 		return celular;
 	}
 
-	public void setCelular(int celular) {
+	public void setCelular(String celular) {
 		this.celular = celular;
 	}
 
 	public String getCpf() {
 		return cpf;
+	}
+
+	@Override
+	public String toString() {
+		return "Pessoa [nome=" + nome + ", cpf=" + cpf + "]";
 	}
 
 

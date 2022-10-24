@@ -22,9 +22,11 @@ public class ExameFisico {
 	private String mucosaPeniana;
 	private String mucosaAnal;
 	private Animal animal;
+	private Veterinario veterinario;
 
-	public ExameFisico(Animal animal) {
+	public ExameFisico(Veterinario veterinario, Animal animal) {
 		// TODO Auto-generated constructor stub
+		this.veterinario = veterinario;
 		this.animal = animal;
 		this.preencherExameFisico();
 	}

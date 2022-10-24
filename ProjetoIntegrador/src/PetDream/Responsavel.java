@@ -5,24 +5,20 @@ import java.util.List;
 
 public class Responsavel extends Pessoa {
 	
-	private Animal animal;
+	private ArrayList<Animal> animal = new ArrayList();
 
-	
-
-	public Responsavel(String nome, String cpf, String endereço, String cidade, String estado, int telefoneFixo, int celular, Animal animal) {
+	public Responsavel(String nome, String cpf, String endereço, String cidade, String estado, String telefoneFixo, String celular) {
 		// TODO Auto-generated constructor stub
 		super(nome, cpf, endereço, cidade, estado, telefoneFixo, celular);
-		this.animal = animal;
 		
 	}
 	
-	public Animal getAnimal() {
+	public ArrayList<Animal> getAnimal() {
 		return animal;
 	}
 
 	public void setAnimal(Animal animal) {
-		this.animal = animal;
+		this.animal.add(animal);
 	}
 	
-
 }

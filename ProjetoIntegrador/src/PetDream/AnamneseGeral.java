@@ -23,25 +23,25 @@ public class AnamneseGeral extends Anamnese {
 		Scanner scanner = new Scanner(System.in);
 		
 		System.out.println("Queixa Principal: ");
-		this.queixaPrincipal = scanner.toString();
+		this.queixaPrincipal = scanner.next();
 		
 		System.out.println("Historico Medico Pregresso: ");
-		this.historicoMedicoPregresso = scanner.toString();
+		this.historicoMedicoPregresso = scanner.next();
 		
 		System.out.println("Alimentacao: ");
-		this.alimentacao = scanner.toString();
+		this.alimentacao = scanner.next();
 		
 		System.out.println("Contactantes: ");
-		this.contactantes = scanner.toString();
+		this.contactantes = scanner.next();
 		
 		System.out.println("Ambiente Em Que Vive: ");
-		this.ambienteEmQueVive = scanner.toString();
+		this.ambienteEmQueVive = scanner.next();
 		
 		System.out.println("Vacinação: ");
-		this.vacinacao = scanner.toString();
+		this.vacinacao = scanner.next();
 		
 		System.out.println("Vermifugação: ");
-		this.vermifugacao = scanner.toString();
+		this.vermifugacao = scanner.next();
 	
 		scanner.close();
 		
