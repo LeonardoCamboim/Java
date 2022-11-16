@@ -1,6 +1,10 @@
-package PetDream;
+package FichaDeAnamnese;
 
-import java.util.Scanner;
+import java.util.Scanner; 
+
+import Animais.Animal;
+import Pessoas.Responsavel;
+import Pessoas.Veterinario;
 
 public class AnamneseGeral extends Anamnese {
 	
@@ -15,35 +19,10 @@ public class AnamneseGeral extends Anamnese {
 	public AnamneseGeral(Responsavel responsavel, Veterinario funcionario, Animal animal) {
 		// TODO Auto-generated constructor stub
 		super(responsavel, funcionario, animal);
-		this.preencherAnamneseGeral();
 	}
 	
-	public void preencherAnamneseGeral() {
-		
-		Scanner scanner = new Scanner(System.in);
-		
-		System.out.println("Queixa Principal: ");
-		this.queixaPrincipal = scanner.next();
-		
-		System.out.println("Historico Medico Pregresso: ");
-		this.historicoMedicoPregresso = scanner.next();
-		
-		System.out.println("Alimentacao: ");
-		this.alimentacao = scanner.next();
-		
-		System.out.println("Contactantes: ");
-		this.contactantes = scanner.next();
-		
-		System.out.println("Ambiente Em Que Vive: ");
-		this.ambienteEmQueVive = scanner.next();
-		
-		System.out.println("Vacinação: ");
-		this.vacinacao = scanner.next();
-		
-		System.out.println("Vermifugação: ");
-		this.vermifugacao = scanner.next();
-	
-		
+	public AnamneseGeral() {
+		//Construtor generico.
 	}
 	
 	public String getQueixaPrincipal() {

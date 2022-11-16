@@ -3,11 +3,11 @@ package Atividade11;
 import java.util.Date;
 
 public class Usuario {
-	String nome;
-	String cpf;
-	Date dataNascimento;
-	String profissao;
-	String email;
+	private String nome;
+	private String cpf;
+	private Date dataNascimento;
+	private String profissao;
+	private String email;
 
 	public Usuario(String nome, String cpf, Date dataNascimento, String profissao, String email) {
 		this.nome = nome;

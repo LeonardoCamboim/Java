@@ -1,15 +1,16 @@
-package PetDream;
+package Pessoas;
 
 public class Veterinario extends Pessoa {
 	
-	private int matricula;
+	private static int controleMatricula = 100000;
+	private int matricula = controleMatricula;
 	private Double salario;
 
-		public Veterinario(String nome, String cpf, String endereço, String cidade, String estado, String telefoneFixo, String celular, int matricula, Double salario) {
+		public Veterinario(String nome, String cpf, Double salario) {
 		// TODO Auto-generated constructor stub
-		super(nome, cpf, endereço, cidade, estado, telefoneFixo, celular);
-		this.matricula = matricula;
+		super(nome, cpf);
 		this.salario = salario;
+		Veterinario.controleMatricula++;
 	}
 		
 	public Double getSalario() {
@@ -22,6 +23,10 @@ public class Veterinario extends Pessoa {
 
 	public int getMatricula() {
 		return matricula;
+	}
+	
+	public int getControleMatricula() {
+		return controleMatricula;
 	}
 
 }

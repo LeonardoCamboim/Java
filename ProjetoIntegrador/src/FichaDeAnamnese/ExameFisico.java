@@ -1,6 +1,9 @@
-package PetDream;
+package FichaDeAnamnese;
 
 import java.util.Scanner;
+
+import Animais.Animal;
+import Pessoas.Veterinario;
 
 public class ExameFisico {
 	
@@ -223,5 +226,4 @@ public class ExameFisico {
 	public void setMucosaAnal(String mucosaAnal) {
 		this.mucosaAnal = mucosaAnal;
 	}
-
 }

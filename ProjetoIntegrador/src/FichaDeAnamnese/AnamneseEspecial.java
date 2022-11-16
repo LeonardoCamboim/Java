@@ -1,6 +1,10 @@
-package PetDream;
+package FichaDeAnamnese;
 
-import java.util.Scanner;
+import java.util.Scanner; 
+
+import Animais.Animal;
+import Pessoas.Responsavel;
+import Pessoas.Veterinario;
 
 public class AnamneseEspecial extends Anamnese{
 	
@@ -17,11 +21,9 @@ public class AnamneseEspecial extends Anamnese{
 	public AnamneseEspecial(Responsavel responsavel, Veterinario funcionario, Animal animal) {
 		// TODO Auto-generated constructor stub
 		super(responsavel, funcionario, animal);
-		this.preencherAnamneseEspecial();
-		
 	}
 	
-	public void preencherAnamneseEspecial() {
+	public void preencherFormulario() {
 		
 		Scanner scanner = new Scanner(System.in);
 		
