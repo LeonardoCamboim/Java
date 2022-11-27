@@ -6,8 +6,8 @@ public abstract class Mamifero extends Animal {
 
 	private String pelagem;
 	
-	public Mamifero(Responsavel responsavel) {
-		super(responsavel);
+	public Mamifero(Responsavel responsavel, String sexo) {
+		super(responsavel, sexo);
 		
 	}
 	
@@ -17,5 +17,5 @@ public abstract class Mamifero extends Animal {
 	public void setPelagem(String pelagem) {
 		this.pelagem = pelagem;
 	}
-
+	
 }

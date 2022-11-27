@@ -1,6 +1,6 @@
 package FichaDeAnamnese;
 
-import java.util.Scanner; 
+import java.util.Scanner;  
 
 import Animais.Animal;
 import Pessoas.Responsavel;

@@ -1,7 +1,6 @@
 package FichaDeAnamnese;
 
-import java.util.Scanner; 
-
+import java.util.Scanner;   
 import Animais.Animal;
 import Pessoas.Responsavel;
 import Pessoas.Veterinario;
@@ -19,10 +18,6 @@ public class AnamneseGeral extends Anamnese {
 	public AnamneseGeral(Responsavel responsavel, Veterinario funcionario, Animal animal) {
 		// TODO Auto-generated constructor stub
 		super(responsavel, funcionario, animal);
-	}
-	
-	public AnamneseGeral() {
-		//Construtor generico.
 	}
 	
 	public String getQueixaPrincipal() {

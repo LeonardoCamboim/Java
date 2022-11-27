@@ -1,6 +1,6 @@
 package Pessoas;
 
-import Endereco.Bairro; 
+import Endereco.Bairro;   
 import Endereco.Cidade;
 import Endereco.Estado;
 import Endereco.Rua;
@@ -8,7 +8,7 @@ import Endereco.Rua;
 public abstract class Pessoa {
 	
 	private String nome;
-	private String cpf;
+	private final String cpf;
 	private Rua rua;
 	private Bairro bairro;
 	private Cidade cidade;
@@ -19,18 +19,13 @@ public abstract class Pessoa {
 	public Pessoa(String nome, String cpf) {
 		// TODO Auto-generated constructor stub
 		this.nome = nome;
-		try {
-			
-			IllegalArgumentException erro = new IllegalArgumentException();
-			
-			if (cpf.length() == 9) {
-				this.cpf = cpf;
-			} else {
-				throw erro;
-			}
-				
-		} catch (IllegalArgumentException e) {
-			System.out.println("IllegalArgumentException: O CPF deve conter apenas numeros contendo nove digitos.");
+		validaCpf(cpf);
+		this.cpf = cpf;
+	}
+	
+	private static void validaCpf(String cpf) {	
+		if (cpf.length() != 11) {
+			throw new IllegalArgumentException("IllegalArgumentException: O CPF deve conter apenas numeros contendo nove digitos.");
 		}
 	}
 	

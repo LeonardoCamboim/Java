@@ -1,17 +1,16 @@
 package Pessoas;
 
-import java.util.ArrayList;  
+import java.util.ArrayList;    
 import java.util.List;
 
 import Animais.Animal;
 
-public class Responsavel extends Pessoa {
+public final class Responsavel extends Pessoa {
 	
 	private ArrayList<Animal> animal = new ArrayList();
 	private int indexArrayDoAnimal;
 
 	public Responsavel(String nome, String cpf) {
-		// TODO Auto-generated constructor stub
 		super(nome, cpf);
 	}
 	

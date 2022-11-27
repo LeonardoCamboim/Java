@@ -1,6 +1,6 @@
 package FichaDeAnamnese;
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
 
 import Animais.Animal; 
 import Pessoas.Responsavel;
@@ -12,22 +12,16 @@ public abstract class Anamnese {
 	private Veterinario veterinario;
 	private Animal animal;
 	
-	public Anamnese(Responsavel r, Veterinario v, Animal a) {
+	public Anamnese(Responsavel responsavel, Veterinario veterinario, Animal animal) {
 		// TODO Auto-generated constructor stub
-		this.responsavel = r;
-		this.veterinario = v;
-		this.animal = a;
-	}
-	
-	public Anamnese() {
-
+		this.responsavel = responsavel;
+		this.veterinario = veterinario;
+		this.animal = animal;
 	}
 	
 	public Responsavel getResponsavel() {
 		return responsavel;
 	}
-
-
 	public void setResponsavel(Responsavel responsavel) {
 		this.responsavel = responsavel;
 	}
@@ -36,8 +30,6 @@ public abstract class Anamnese {
 	public Veterinario getVeterinario() {
 		return veterinario;
 	}
-
-
 	public void setVeterinario(Veterinario veterinario) {
 		this.veterinario = veterinario;
 	}
@@ -45,7 +37,6 @@ public abstract class Anamnese {
 	public Animal getAnimal() {
 		return animal;
 	}
-
 	public void setAnimal(Animal animal) {
 		this.animal = animal;
 	}
@@ -54,5 +45,4 @@ public abstract class Anamnese {
 	public String toString() {
 		return String.format("Nome do responsavel: %s%n Nome do Veterinario: %s%n Nome e raça do animal: %s%n", getResponsavel(),getVeterinario(),getAnimal());
 	}
-	
 }

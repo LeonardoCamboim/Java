@@ -15,7 +15,7 @@ public abstract class Pais {
 	
 	public void addEstado(Estado estado) {
 		estados.add(estado);
-		System.out.println("O estado foi adicionado a lista de localidades.");
+		System.out.println("O Estado foi adicionado a lista de localidades.");
 	}
 	public static ArrayList<Estado> getEstados() {
 		return estados;
@@ -41,6 +41,6 @@ public abstract class Pais {
 	
 	@Override
 	public String toString() {
-		return String.format("Nome: %s - Zona: %s - População: %d", getNome(), getZona(), getPopulacao());
+		return String.format(" %s - Zona: %s - População: %d", getNome(), getZona(), getPopulacao());
 	}
 }

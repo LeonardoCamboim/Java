@@ -1,29 +1,28 @@
 package Animais;
 
 import java.util.Date;
-
 import Pessoas.Responsavel;
 
-public abstract class Animal {
+// Toda classe extends Object implicitamente, diretamente ou indiretamente.
+public abstract class Animal extends Object {
 	
-	private int matricula = 100000 + total;
-	private String nome;
-	private String especie;
-	private String raca;
-	private String sexo;
-	private int idade;
-	private Double peso;
-	private String procedencia;
-	private Responsavel responsavel;
-	private int indexArrayDoResponsavel;
-	private static int total;
+	private int          matricula = 100000 + total;
+	private String       nome;
+	private String       raca;
+	private final String sexo;
+	private int          idade;
+	private Double       peso;
+	private String       procedencia;
+	private Responsavel  responsavel;
+	private int          indexArrayDoResponsavel;
+	private static int   total;
 	
 	//Falta implementar atributo.
 	private Date ultimaConsulta;
 	
-	public Animal(Responsavel responsavel) {
+	public Animal(Responsavel responsavel, String sexo) {
 		this.responsavel = responsavel;
-		// TODO Auto-generated constructor stub
+		this.sexo = sexo;
 		Animal.total++;
 	}
 	
@@ -37,13 +36,6 @@ public abstract class Animal {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	public String getEspecie() {
-		return especie;
-	}
-	public void setEspecie(String especie) {
-		this.especie = especie;
-	}
 
 	public String getRaca() {
 		return raca;
@@ -55,9 +47,6 @@ public abstract class Animal {
 
 	public String getSexo() {
 		return sexo;
-	}
-	public void setSexo(String sexo) {
-		this.sexo = sexo;
 	}
 
 	public int getIdade() {
@@ -98,7 +87,12 @@ public abstract class Animal {
 
 	@Override
 	public String toString() {
-		return String.format(" [Animal(%d) nome= %s - %s - especie = %s]%n", getIndexArrayDoResponsavel(), getNome(),
-				getResponsavel(), getEspecie());
+		return String.format(" [Animal(%d) nome= %s - %s", getIndexArrayDoResponsavel(), getNome() 
+				,getResponsavel());
 	}
+	
+	public final void metodoTeste(final double a) {
+		this.matricula += a;
+	}
+
 }

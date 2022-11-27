@@ -2,10 +2,14 @@ package Animais;
 
 import Pessoas.Responsavel;
 
-public class Peixe extends Animal {
+public final class Peixe extends Animal {
 
-	public Peixe(Responsavel responsavel) {
-		super(responsavel);
+	public Peixe(Responsavel responsavel, String sexo) {
+		super(responsavel, sexo);
 	}
-
+	
+	@Override
+	public String toString() {
+		return String.format("%s - especie = %s] %n", super.toString(), this.getClass().getSimpleName());
+	}
 }
