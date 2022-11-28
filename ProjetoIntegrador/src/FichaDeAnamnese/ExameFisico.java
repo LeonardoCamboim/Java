@@ -1,16 +1,13 @@
 package FichaDeAnamnese;
 
-import java.util.Scanner; 
+import Animais.Animal; 
 
-import Animais.Animal;
-import Pessoas.Veterinario;
-
-public class ExameFisico {
+public class ExameFisico extends Anamnese {
 	
 	private String postura;
 	private String nivelDeConsciencia;
 	private String escoreCorporal;
-	private int tr;
+	private String tr;
 	private String fr;
 	private String fc;
 	private String tpc;
@@ -24,77 +21,14 @@ public class ExameFisico {
 	private String mucosaOral;
 	private String mucosaPeniana;
 	private String mucosaAnal;
-	private Animal animal;
-	private Veterinario veterinario;
 
-	public ExameFisico(Veterinario veterinario, Animal animal) {
-		// TODO Auto-generated constructor stub
-		this.veterinario = veterinario;
-		this.animal = animal;
-		this.preencherExameFisico();
-	}
-	
-	public void preencherExameFisico() {
-		
-		Scanner scanner = new Scanner(System.in);
-		
-		System.out.println("Postura: ");
-		this.postura = scanner.next();
-		
-		System.out.println("Nivel De Consciencia: ");
-		this.nivelDeConsciencia = scanner.next();
-		
-		System.out.println("Escore Corporal: ");
-		this.escoreCorporal = scanner.next();
-		
-		System.out.println("Tr: ");
-		this.tr = scanner.nextInt();
-		
-		System.out.println("Fr: ");
-		this.fr = scanner.next();
-		
-		System.out.println("Fc: ");
-		this.fc = scanner.next();
-		
-		System.out.println("Tpc: ");
-		this.tpc = scanner.next();
-		
-		System.out.println("Pulso: ");
-		this.pulso = scanner.next();
-		
-		System.out.println("Hidratacao: ");
-		this.hidratacao = scanner.next();
-		
-		System.out.println("Linfonodos Submand: ");
-		this.linfonodosSubmand = scanner.next();
-		
-		System.out.println("linf Pre Escapulares: ");
-		this.linfPreEscapulares = scanner.next();
-		
-		System.out.println("linf Popliteos: ");
-		this.linfPopliteos = scanner.next();
-		
-		System.out.println("linf Inguinais: ");
-		this.linfInguinais = scanner.next();
-		
-		System.out.println("Mucosa Ocular: ");
-		this.mucosaOcular = scanner.next();
-		
-		System.out.println("Mucosa Oral: ");
-		this.mucosaOral = scanner.next();
-		
-		System.out.println("Mucosa Peniana: ");
-		this.mucosaPeniana = scanner.next();
-		
-		System.out.println("Mucosa Anal: ");
-		this.mucosaAnal = scanner.next();
-		
+	public ExameFisico(Animal animalPaciente) { 
+		super(animalPaciente);
 	}
 	
 	public String getPostura() {
 		return postura;
 	}
-
 	public void setPostura(String postura) {
 		this.postura = postura;
 	}
@@ -102,7 +36,6 @@ public class ExameFisico {
 	public String getNivelDeConsciencia() {
 		return nivelDeConsciencia;
 	}
-
 	public void setNivelDeConsciencia(String nivelDeConsciencia) {
 		this.nivelDeConsciencia = nivelDeConsciencia;
 	}
@@ -110,23 +43,20 @@ public class ExameFisico {
 	public String getEscoreCorporal() {
 		return escoreCorporal;
 	}
-
 	public void setEscoreCorporal(String escoreCorporal) {
 		this.escoreCorporal = escoreCorporal;
 	}
 
-	public int getTr() {
+	public String getTr() {
 		return tr;
 	}
-
-	public void setTr(int tr) {
+	public void setTr(String tr) {
 		this.tr = tr;
 	}
 
 	public String getFr() {
 		return fr;
 	}
-
 	public void setFr(String fr) {
 		this.fr = fr;
 	}
@@ -134,7 +64,6 @@ public class ExameFisico {
 	public String getFc() {
 		return fc;
 	}
-
 	public void setFc(String fc) {
 		this.fc = fc;
 	}
@@ -142,7 +71,6 @@ public class ExameFisico {
 	public String getTpc() {
 		return tpc;
 	}
-
 	public void setTpc(String tpc) {
 		this.tpc = tpc;
 	}
@@ -150,7 +78,6 @@ public class ExameFisico {
 	public String getPulso() {
 		return pulso;
 	}
-
 	public void setPulso(String pulso) {
 		this.pulso = pulso;
 	}
@@ -158,7 +85,6 @@ public class ExameFisico {
 	public String getHidratacao() {
 		return hidratacao;
 	}
-
 	public void setHidratacao(String hidratacao) {
 		this.hidratacao = hidratacao;
 	}
@@ -166,7 +92,6 @@ public class ExameFisico {
 	public String getLinfonodosSubmand() {
 		return linfonodosSubmand;
 	}
-
 	public void setLinfonodosSubmand(String linfonodosSubmand) {
 		this.linfonodosSubmand = linfonodosSubmand;
 	}
@@ -174,7 +99,6 @@ public class ExameFisico {
 	public String getLinfPreEscapulares() {
 		return linfPreEscapulares;
 	}
-
 	public void setLinfPreEscapulares(String linfPreEscapulares) {
 		this.linfPreEscapulares = linfPreEscapulares;
 	}
@@ -182,7 +106,6 @@ public class ExameFisico {
 	public String getLinfPopliteos() {
 		return linfPopliteos;
 	}
-
 	public void setLinfPopliteos(String linfPopliteos) {
 		this.linfPopliteos = linfPopliteos;
 	}
@@ -190,7 +113,6 @@ public class ExameFisico {
 	public String getLinfInguinais() {
 		return linfInguinais;
 	}
-
 	public void setLinfInguinais(String linfInguinais) {
 		this.linfInguinais = linfInguinais;
 	}
@@ -198,7 +120,6 @@ public class ExameFisico {
 	public String getMucosaOcular() {
 		return mucosaOcular;
 	}
-
 	public void setMucosaOcular(String mucosaOcular) {
 		this.mucosaOcular = mucosaOcular;
 	}
@@ -206,7 +127,6 @@ public class ExameFisico {
 	public String getMucosaOral() {
 		return mucosaOral;
 	}
-
 	public void setMucosaOral(String mucosaOral) {
 		this.mucosaOral = mucosaOral;
 	}
@@ -214,7 +134,6 @@ public class ExameFisico {
 	public String getMucosaPeniana() {
 		return mucosaPeniana;
 	}
-
 	public void setMucosaPeniana(String mucosaPeniana) {
 		this.mucosaPeniana = mucosaPeniana;
 	}
@@ -222,8 +141,54 @@ public class ExameFisico {
 	public String getMucosaAnal() {
 		return mucosaAnal;
 	}
-
 	public void setMucosaAnal(String mucosaAnal) {
 		this.mucosaAnal = mucosaAnal;
+	}
+
+	@Override
+	public void preencherCampos() {
+		setPostura(solicitaDados("Postura"));
+		setNivelDeConsciencia(solicitaDados("Nivel de consciencia"));
+		setEscoreCorporal(solicitaDados("Escore corporal"));
+		setTr(solicitaDados("Tr"));
+		setFr(solicitaDados("Fr"));
+		setFc(solicitaDados("Fc"));
+		setTpc(solicitaDados("Tpc"));
+		setPulso(solicitaDados("Pulso"));
+		setHidratacao(solicitaDados("Hidratação"));
+		setLinfonodosSubmand(solicitaDados("Linfonodos submand"));
+		setLinfPreEscapulares(solicitaDados("Linf. preescapulares"));
+		setLinfPopliteos(solicitaDados("Linf. popliteos"));
+		setLinfInguinais(solicitaDados("Linf. inguinais"));
+		setMucosaOcular(solicitaDados("Mucosa ocular"));
+		setMucosaOral(solicitaDados("Mucosa oral"));
+		setMucosaPeniana(solicitaDados("Mucosa peniana"));
+		setMucosaAnal(solicitaDados("Mucosa anal"));
+	}
+	
+	@Override
+	public String toString() {
+		return String.format("%nExame fisico: %n"
+				+ "Postura: %s%n"
+				+ "Nivel de consciencia: %s%n"
+				+ "Escore corporal: %s%n"
+				+ "Tr: %s%n"
+				+ "Fr: %s%n"
+				+ "Fc: %s%n"
+				+ "Tpc: %s%n"
+				+ "Pulso: %s%n"
+				+ "Hidratacao: %s%n"
+				+ "Linfonodos submand: %s%n"
+				+ "Linf. pre. escapulares: %s%n"
+				+ "Linf. popliteos: %s%n"
+				+ "Linf. inguinais: %s%n"
+				+ "Mucosa ocular: %s%n"
+				+ "Mucosa oral: %s%n"
+				+ "Mucosa peniana: %s%n"
+				+ "Mucosa anal: %s%n", getPostura(), getNivelDeConsciencia(),
+				getEscoreCorporal(), getTr(), getFr(), getFc(), getTpc(),
+				getPulso(), getHidratacao(), getLinfonodosSubmand(),
+				getLinfPreEscapulares(), getLinfPopliteos(), getLinfInguinais(),
+				getMucosaOcular(), getMucosaOral(), getMucosaPeniana(), getMucosaAnal());
 	}
 }

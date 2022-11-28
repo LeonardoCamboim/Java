@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Aula16/src"/>
+	<classpathentry kind="src" path="DeitelBook/src"/>
+	<classpathentry kind="src" path="Faculdade/src"/>
+	<classpathentry kind="src" path="OakTecnologia/src"/>
+	<classpathentry kind="src" path="ProjetoIntegrador/src"/>
+	<classpathentry kind="output" path="Aula16/bin"/>
+</classpath>

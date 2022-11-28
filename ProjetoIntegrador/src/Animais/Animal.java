@@ -1,33 +1,47 @@
 package Animais;
 
 import java.util.Date;
+
+import App.Preenchimento;
 import Pessoas.Responsavel;
+import Pessoas.Veterinario;
 
 // Toda classe extends Object implicitamente, diretamente ou indiretamente.
-public abstract class Animal extends Object {
+public abstract class Animal extends Object implements Preenchimento {
 	
-	private int          matricula = 100000 + total;
+	private int          id = total;
 	private String       nome;
 	private String       raca;
 	private final String sexo;
-	private int          idade;
-	private Double       peso;
-	private String       procedencia;
+	private String       idade;
+	private String       peso;
+	private String       procedencia; 
 	private Responsavel  responsavel;
-	private int          indexArrayDoResponsavel;
+	private Veterinario  veterinario;
 	private static int   total;
 	
 	//Falta implementar atributo.
 	private Date ultimaConsulta;
 	
-	public Animal(Responsavel responsavel, String sexo) {
+	public Animal(Responsavel responsavel, Veterinario veterinario, String sexo) {
 		this.responsavel = responsavel;
+		this.responsavel.validaAnimal(this);
+		this.veterinario = veterinario;
+		this.sexo = sexo;
+		total++;
+	}
+	
+	public Animal(String nome, Responsavel responsavel, Veterinario veterinario, String sexo) {
+		this.nome = nome;
+		this.responsavel = responsavel;
+		this.responsavel.validaAnimal(this);
+		this.veterinario = veterinario;
 		this.sexo = sexo;
 		Animal.total++;
 	}
-	
-	public int getMatricula() {
-		return matricula;
+
+	public int getId() {
+		return id;
 	}
 
 	public String getNome() {
@@ -49,17 +63,17 @@ public abstract class Animal extends Object {
 		return sexo;
 	}
 
-	public int getIdade() {
+	public String getIdade() {
 		return idade;
 	}
-	public void setIdade(int idade) {
-		this.idade = idade;
+	public void setIdade(String string) {
+		this.idade = string;
 	}
 
-	public Double getPeso() {
+	public String getPeso() {
 		return peso;
 	}
-	public void setPeso(Double peso) {
+	public void setPeso(String peso) {
 		this.peso = peso;
 	}
 
@@ -78,21 +92,24 @@ public abstract class Animal extends Object {
 		return total;
 	}
 	
-	public void setIndexArrayDoResponsavel(int indexArrayDoResponsavel) {
-		this.indexArrayDoResponsavel = indexArrayDoResponsavel;
+	public Veterinario getVeterinario() {
+		return veterinario;
 	}
-	public int getIndexArrayDoResponsavel() {
-		return indexArrayDoResponsavel;
-	}
-
-	@Override
-	public String toString() {
-		return String.format(" [Animal(%d) nome= %s - %s", getIndexArrayDoResponsavel(), getNome() 
-				,getResponsavel());
+	public void setVeterinario(Veterinario veterinario) {
+		this.veterinario = veterinario;
 	}
 	
-	public final void metodoTeste(final double a) {
-		this.matricula += a;
+	@Override
+	public void preencherCampos() {
+		setNome(solicitaDados("Nome"));
+		setRaca(solicitaDados("Raça"));
+		setIdade(solicitaDados("Idade"));
+		setPeso(solicitaDados("Peso"));
+		setProcedencia(solicitaDados("Procedencia")); 
 	}
-
+	
+	@Override
+	public String toString() {
+		return String.format(" Animal id: %d nome: %s %n %s %n %s", getId(), getNome(), getResponsavel(), getVeterinario());
+	}
 }

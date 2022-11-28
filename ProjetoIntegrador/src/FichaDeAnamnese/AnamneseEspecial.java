@@ -1,10 +1,6 @@
 package FichaDeAnamnese;
 
-import java.util.Scanner;  
-
 import Animais.Animal;
-import Pessoas.Responsavel;
-import Pessoas.Veterinario;
 
 public class AnamneseEspecial extends Anamnese{
 	
@@ -17,49 +13,14 @@ public class AnamneseEspecial extends Anamnese{
 	private String sistemaNeurologico;
 	private String pelosEAnexos;
 	private String olhos;
+	
+	public AnamneseEspecial(Animal animal) {  
+		super(animal);
+	}
 
-	public AnamneseEspecial(Responsavel responsavel, Veterinario funcionario, Animal animal) {
-		// TODO Auto-generated constructor stub
-		super(responsavel, funcionario, animal);
-	}
-	
-	public void preencherFormulario() {
-		
-		Scanner scanner = new Scanner(System.in);
-		
-		System.out.println("Sistema Respiratorio: ");
-		this.sistemaRespiratorio = scanner.next();
-		
-		System.out.println("Sistema Cardiovascular: ");
-		this.sistemaCardiovascular = scanner.next();
-		
-		System.out.println("Sistema Digestorio: ");
-		this.sistemaDigestorio = scanner.next();
-		
-		System.out.println("Sistema Urinario: ");
-		this.sistemaUrinario = scanner.next();
-		
-		System.out.println("Sistema Reprodutor: ");
-		this.sistemaReprodutor = scanner.next();
-		
-		System.out.println("Sistema Locomotor: ");
-		this.sistemaLocomotor = scanner.next();
-		
-		System.out.println("Sistema Neurologico: ");
-		this.sistemaNeurologico = scanner.next();
-		
-		System.out.println("Pelos e Anexos: ");
-		this.pelosEAnexos = scanner.next();
-		
-		System.out.println("Olhos: ");
-		this.olhos = scanner.next();
-		
-	}
-	
 	public String getSistemaRespiratorio() {
 		return sistemaRespiratorio;
 	}
-
 	public void setSistemaRespiratorio(String sistemaRespiratorio) {
 		this.sistemaRespiratorio = sistemaRespiratorio;
 	}
@@ -67,7 +28,6 @@ public class AnamneseEspecial extends Anamnese{
 	public String getSistemaCardiovascular() {
 		return sistemaCardiovascular;
 	}
-
 	public void setSistemaCardiovascular(String sistemaCardiovascular) {
 		this.sistemaCardiovascular = sistemaCardiovascular;
 	}
@@ -75,7 +35,6 @@ public class AnamneseEspecial extends Anamnese{
 	public String getSistemaDigestorio() {
 		return sistemaDigestorio;
 	}
-
 	public void setSistemaDigestorio(String sistemaDigestorio) {
 		this.sistemaDigestorio = sistemaDigestorio;
 	}
@@ -83,7 +42,6 @@ public class AnamneseEspecial extends Anamnese{
 	public String getSistemaUrinario() {
 		return sistemaUrinario;
 	}
-
 	public void setSistemaUrinario(String sistemaUrinario) {
 		this.sistemaUrinario = sistemaUrinario;
 	}
@@ -91,7 +49,6 @@ public class AnamneseEspecial extends Anamnese{
 	public String getSistemaReprodutor() {
 		return sistemaReprodutor;
 	}
-
 	public void setSistemaReprodutor(String sistemaReprodutor) {
 		this.sistemaReprodutor = sistemaReprodutor;
 	}
@@ -99,7 +56,6 @@ public class AnamneseEspecial extends Anamnese{
 	public String getSistemaLocomotor() {
 		return sistemaLocomotor;
 	}
-
 	public void setSistemaLocomotor(String sistemaLocomotor) {
 		this.sistemaLocomotor = sistemaLocomotor;
 	}
@@ -107,7 +63,6 @@ public class AnamneseEspecial extends Anamnese{
 	public String getSistemaNeurologico() {
 		return sistemaNeurologico;
 	}
-
 	public void setSistemaNeurologico(String sistemaNeurologico) {
 		this.sistemaNeurologico = sistemaNeurologico;
 	}
@@ -115,7 +70,6 @@ public class AnamneseEspecial extends Anamnese{
 	public String getPelosEAnexos() {
 		return pelosEAnexos;
 	}
-
 	public void setPelosEAnexos(String pelosEAnexos) {
 		this.pelosEAnexos = pelosEAnexos;
 	}
@@ -123,9 +77,34 @@ public class AnamneseEspecial extends Anamnese{
 	public String getOlhos() {
 		return olhos;
 	}
-
 	public void setOlhos(String olhos) {
 		this.olhos = olhos;
 	}
 
+	@Override
+	public void preencherCampos() {
+		setSistemaRespiratorio(solicitaDados("Sistema respiratorio"));
+		setSistemaCardiovascular(solicitaDados("Sistema cardiovascular"));
+		setSistemaDigestorio(solicitaDados("Sistema digestorio"));
+		setSistemaUrinario(solicitaDados("Sistema urinario"));
+		setSistemaReprodutor(solicitaDados("Sistema reprodutor"));
+		setSistemaLocomotor(solicitaDados("Sistema locomotor"));
+		setSistemaNeurologico(solicitaDados("Sistema neurologico"));
+		setPelosEAnexos(solicitaDados("Pelos e anexos"));
+		setOlhos(solicitaDados("Olhos"));
+	}
+	@Override
+	public String toString() {
+		return String.format("%nAnamnese Especial: %n" 
+				+ "Sistema respiratorio: %s%n"
+				+ "Sistema cardio vascular: %s%n" 
+				+ "Sistema urinario: %s%n"
+				+ "Sistema reprodutor: %s%n"
+				+ "Sistema locomotor: %s%n"
+				+ "Sistema neurologico: %s%n"
+				+ "pelos e anexos: %s%n"
+				+ "Olhos: %s%n", getSistemaRespiratorio(), getSistemaCardiovascular(), 
+				getSistemaUrinario(), getSistemaReprodutor(), getSistemaLocomotor(), 
+				getSistemaNeurologico(), getPelosEAnexos(), getOlhos());
+	}
 }

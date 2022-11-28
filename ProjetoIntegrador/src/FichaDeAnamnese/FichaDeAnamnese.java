@@ -1,60 +1,71 @@
  package FichaDeAnamnese;
 
+import java.text.ParseException;  
+import java.text.SimpleDateFormat; 
 import java.util.Date; 
-
 import Animais.Animal;
-import Pessoas.Responsavel;
-import Pessoas.Veterinario;
+import App.Preenchimento;
 
-public class FichaDeAnamnese {
+public final class FichaDeAnamnese extends Object implements Preenchimento {
 	
-	
-	private Date data;
-	private Veterinario veterinario;
-	private Responsavel responsavel;
-	private Animal animal;
-	private AnamneseGeral anamneseGeral;
+	private int              numero = total;
+	private Date             data;
+	private Animal           animalPaciente;
+	private AnamneseGeral    anamneseGeral;
 	private AnamneseEspecial anamneseEspecial;
-	private ExameFisico exameFisico;
-
-	public FichaDeAnamnese(Date data, Veterinario veterinario, Responsavel responsavel, Animal animal,
-			AnamneseGeral anamneseGeral, AnamneseEspecial anamneseEspecial, ExameFisico exameFisico) {
-		// TODO Auto-generated constructor stub
-		this.data = data;
-		this.veterinario = veterinario;
-		this.responsavel = responsavel;
-		this.animal = animal;
-		this.anamneseGeral = anamneseGeral;
-		this.anamneseEspecial = anamneseEspecial;
-		this.exameFisico = exameFisico;
+	private ExameFisico      exameFisico;
+	private static int       total;
+	private SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+	
+	public FichaDeAnamnese(Animal animalPaciente, String data) throws ParseException {
+		this.animalPaciente = animalPaciente;
+		this.data = formatter.parse(data);
+		this.anamneseGeral = new AnamneseGeral(animalPaciente);
+		this.anamneseEspecial = new AnamneseEspecial(animalPaciente);
+		this.exameFisico = new ExameFisico(animalPaciente);
+		total++;
 	}
 	
-	public Date getDate() {
-		return this.data;
+	@Override
+	public void preencherCampos() {
+		this.anamneseGeral.preencherCampos();
+		this.anamneseEspecial.preencherCampos();
+		this.exameFisico.preencherCampos();
+	}
+	
+	public Animal getAnimalPaciente() {
+		return animalPaciente;
 	}
 
-	public Veterinario getVeterinario() {
-		return this.veterinario;
+	public int getNumero() {
+		return numero;
 	}
 
-	public Responsavel getResponsavel() {
-		return this.responsavel;
+	public Date getData() {
+		return data;
 	}
 
-	public Animal getAnimal() {
-		return this.animal;
+	public static int getTotal() {
+		return total;
 	}
-
 	public AnamneseGeral getAnamneseGeral() {
 		return this.anamneseGeral;
 	}
-	
 	public AnamneseEspecial getAnamneseEspecial() {
 		return this.anamneseEspecial;
 	}
-
 	public ExameFisico getExameFisico() {
 		return this.exameFisico;
 	}
 	
+	@Override
+	public String toString() {
+		return String.format(" Ficha de Anamnese Numero: %d%n Data: %s%n"
+				+ "%s"
+				+ "%s"
+				+ "%s"
+				+ "%s", getNumero(), getData(), getAnimalPaciente(),
+				getAnamneseGeral(), getAnamneseEspecial(), getExameFisico());
+	}
+
 }

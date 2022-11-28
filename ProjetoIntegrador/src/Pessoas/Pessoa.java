@@ -1,34 +1,44 @@
 package Pessoas;
 
-import Endereco.Bairro;   
-import Endereco.Cidade;
-import Endereco.Estado;
-import Endereco.Rua;
+import App.Preenchimento;
 
-public abstract class Pessoa {
+public abstract class Pessoa extends Object implements Preenchimento {
 	
-	private String nome;
+	private int          matricula = total;
+	private String       nome;
 	private final String cpf;
-	private Rua rua;
-	private Bairro bairro;
-	private Cidade cidade;
-	private Estado estado;
-	private String telefoneFixo;
-	private String celular;
+	private String       rua;
+	private String       bairro;
+	private String       cidade;
+	private String       estado;
+	private String       telefoneFixo;
+	private String       celular;
+	private static int   total;
 	
 	public Pessoa(String nome, String cpf) {
-		// TODO Auto-generated constructor stub
 		this.nome = nome;
 		validaCpf(cpf);
 		this.cpf = cpf;
+		this.total++;
 	}
 	
+	//Metodo auxiliar do construtor da classe. 
+	//Private para que nao possa ser sobrescrito e gerar erro no construtor superclass.
 	private static void validaCpf(String cpf) {	
 		if (cpf.length() != 11) {
-			throw new IllegalArgumentException("IllegalArgumentException: O CPF deve conter apenas numeros contendo nove digitos.");
+			throw new IllegalArgumentException("IllegalArgumentException: "
+					+ "O CPF deve conter apenas numeros contendo nove digitos.");
 		}
 	}
 	
+	public int getMatricula() {
+		return matricula;
+	}
+
+	public static int getTotal() {
+		return total;
+	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -36,31 +46,31 @@ public abstract class Pessoa {
 		this.nome = nome;
 	}
 
-	public Rua getRua() {
+	public String getRua() {
 		return rua;
 	}
-	public void setRua(Rua rua) {
+	public void setRua(String rua) {
 		this.rua = rua;
 	}
 
-	public Bairro getBairro() {
+	public String getBairro() {
 		return bairro;
 	}
-	public void setBairro(Bairro bairro) {
+	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
 
-	public Cidade getCidade() {
+	public String getCidade() {
 		return cidade;
 	}
-	public void setCidade(Cidade cidade) {
+	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
 
-	public Estado getEstado() {
+	public String getEstado() {
 		return estado;
 	}
-	public void setEstado(Estado estado) {
+	public void setEstado(String estado) {
 		this.estado = estado;
 	}
 
@@ -83,7 +93,18 @@ public abstract class Pessoa {
 	}
 
 	@Override
+	public void preencherCampos() {
+		setRua(solicitaDados("Rua"));
+		setBairro(solicitaDados("Bairro"));
+		setCidade(solicitaDados("Cidade"));
+		setEstado(solicitaDados("Estado"));
+		setTelefoneFixo(solicitaDados("Telefone Fixo"));
+		setCelular(solicitaDados("Celular"));
+	}
+	
+	@Override
 	public String toString() {
-		return String.format("Nome= %s - Cpf= %s", getNome(), getCpf());
+		return String.format("Matricula: %d Nome: %s Cpf: %s", 
+				getMatricula(), getNome(), getCpf());
 	}
 }
