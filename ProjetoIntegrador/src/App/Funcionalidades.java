@@ -1,6 +1,6 @@
 package App;
 
-import Animais.Cachorro; 
+import Animais.Cachorro;  
 import Animais.Gato;
 import Animais.Passaro;
 import Animais.Peixe;
@@ -24,7 +24,7 @@ public class Funcionalidades {
 		Peixe    animal04 = new Peixe("Nemo", responsavel02, veterinario01, "Femea");
 
 		FichaDeAnamnese fichaDeAnamnese01 = new FichaDeAnamnese(animal01, "27/11/2022");
-		
+	
 		fichaDeAnamnese01.preencherCampos();
 		
 		System.out.println(fichaDeAnamnese01);

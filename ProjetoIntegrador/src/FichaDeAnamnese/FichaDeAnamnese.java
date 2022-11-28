@@ -1,7 +1,7 @@
  package FichaDeAnamnese;
 
 import java.text.ParseException;  
-import java.text.SimpleDateFormat; 
+import java.text.SimpleDateFormat;
 import java.util.Date; 
 import Animais.Animal;
 import App.Preenchimento;
@@ -16,6 +16,7 @@ public final class FichaDeAnamnese extends Object implements Preenchimento {
 	private ExameFisico      exameFisico;
 	private static int       total;
 	private SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+	private Preenchimento[] compartimentos = new Preenchimento[4];
 	
 	public FichaDeAnamnese(Animal animalPaciente, String data) throws ParseException {
 		this.animalPaciente = animalPaciente;
@@ -23,16 +24,26 @@ public final class FichaDeAnamnese extends Object implements Preenchimento {
 		this.anamneseGeral = new AnamneseGeral(animalPaciente);
 		this.anamneseEspecial = new AnamneseEspecial(animalPaciente);
 		this.exameFisico = new ExameFisico(animalPaciente);
+		preencherCompartimentos();
 		total++;
+	}
+
+	//Metodo auxiliar do construtor para composição da lista de componentes.
+	private void preencherCompartimentos() {
+		this.compartimentos[0] = this.animalPaciente;
+		this.compartimentos[1] = this.anamneseGeral;
+		this.compartimentos[2] = this.anamneseEspecial;
+		this.compartimentos[3] = this.exameFisico;
 	}
 	
 	@Override
-	public void preencherCampos() {
-		this.anamneseGeral.preencherCampos();
-		this.anamneseEspecial.preencherCampos();
-		this.exameFisico.preencherCampos();
+	public void preencherCampos() {	
+		for (Preenchimento i : this.compartimentos) {
+			System.out.println("Preenchimento de informações: " + i.getClass().getSimpleName());
+			i.preencherCampos();
+		}
 	}
-	
+
 	public Animal getAnimalPaciente() {
 		return animalPaciente;
 	}
