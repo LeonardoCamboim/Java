@@ -32,7 +32,7 @@ public class Estudos {
 					
 			// Comparação de instancias
 			if (animal instanceof Gato) {
-						
+
 				// Downcast de referencia
 				Gato gato = (Gato) animal;
 				gato.metodoSubclass();
@@ -63,6 +63,6 @@ public class Estudos {
 		for (int i = 0; i < list.length; i++) {
 			System.out.printf("O animal %d é um: %s%n", i, list[i].getClass().getSimpleName());
 		}
-	}
 
+	}
 }

@@ -57,7 +57,6 @@ public abstract class Animal extends Object implements Preenchimento {
 	public void setRaca(String raca) {
 		this.raca = raca;
 	}
-	
 
 	public String getSexo() {
 		return sexo;
